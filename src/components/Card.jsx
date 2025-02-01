@@ -1,10 +1,21 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
-function Card() {
+function Card({props}) {
+
+  const [metric, setMetric] = useState("");
+  const [value, setValue] = useState("");
+  const [increment, setIncrement] = useState("");
+
+  useEffect(() => {
+    setMetric(props.title)
+    setValue(props.amount)
+    setIncrement(props.increment)
+  }, [])
+  
   return (
-    <div class="bg-green-50 shadow-sm p-6 w-full max-w-sm rounded-3xl font-[sans-serif] overflow-hidden mx-auto mt-4">
+    <div class="bg-green-50 shadow-sm py-3 px-4 w-full max-w-sm rounded-3xl font-[sans-serif] overflow-hidden mx-auto mt-4">
       <div class="flex items-center">
-        <div class="bg-green-400 w-12 h-12 p-1 flex items-center justify-center rounded-full cursor-pointer">
+        <div class="bg-green-400 w-12 h-12 p-1 flex items-center justify-center rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32px"
@@ -22,13 +33,13 @@ function Card() {
         </div>
       </div>
 
-      <p class="text-sm text-gray-800 font-semibold my-8 leading-relaxed">
-        Total Revenue
+      <p class="text-sm text-gray-800 font-semibold my-1 py-2 leading-relaxed">
+        {metric}
       </p>
 
       <div class="flex  items-center justify-between  ">
-        <h3 class="text-3xl text-black">$2000000</h3>
-        <h3 class="text-lg p-1 px-3 bg-green-200 rounded-3xl text-green-600">+2.5%</h3>
+        <h3 class="text-2xl text-black">{value}</h3>
+        <h3 class="text-xs p-1 px-3 bg-green-200 rounded-3xl text-green-600">+ {increment}%</h3>
       </div>
     </div>
   )

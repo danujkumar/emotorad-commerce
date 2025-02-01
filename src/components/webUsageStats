@@ -28,16 +28,16 @@ export const desktopOS = [
 
 export const mobileOS = [
   {
-    label: 'Android',
-    value: 70.48,
+    label: 'Basic Tees',
+    value: 55.00,
   },
   {
-    label: 'iOS',
-    value: 28.8,
+    label: 'Custom Short Pants',
+    value: 31.00,
   },
   {
-    label: 'Other',
-    value: 0.71,
+    label: 'Super Hoodies',
+    value: 14.00,
   },
 ];
 
@@ -52,19 +52,11 @@ export const platforms = [
   },
 ];
 
-const normalize = (v, v2) => Number.parseFloat(((v * v2) / 100).toFixed(2));
-
 export const mobileAndDesktopOS = [
   ...mobileOS.map((v) => ({
     ...v,
     label: v.label === 'Other' ? 'Other (Mobile)' : v.label,
-    value: normalize(v.value, platforms[0].value),
-  })),
-  ...desktopOS.map((v) => ({
-    ...v,
-    label: v.label === 'Other' ? 'Other (Desktop)' : v.label,
-    value: normalize(v.value, platforms[1].value),
-  })),
+  }))
 ];
 
 export const valueFormatter = (item) => `${item.value}%`;

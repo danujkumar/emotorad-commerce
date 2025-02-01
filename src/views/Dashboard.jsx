@@ -1,50 +1,52 @@
-import React, {useState, useEffect} from 'react'
-import Navbar from '../components/Navbar'
-import { BarChart } from '@mui/x-charts/BarChart'
-import Card from '../components/Card'
-import Piechart from '../components/Piechart'
-import TopBar from '../components/TopBar'
-import axios from 'axios'
-import Popup from '../components/Popup'
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import { BarChart } from "@mui/x-charts/BarChart";
+import Card from "../components/Card";
+import Piechart from "../components/Piechart";
+import TopBar from "../components/TopBar";
+import axios from "axios";
+import Popup from "../components/Popup";
 
 function Dashboard() {
-  const [data, setData] = useState({ name: "Total Revenues", value: "$2,129,430" });
+  const [data, setData] = useState({
+    name: "Total Revenues",
+    value: "$2,129,430",
+  });
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [insta, setInsta] = useState(""); 
+  const [insta, setInsta] = useState("");
   const [youtube, setYou] = useState("");
   const [itemData, setItemData] = React.useState(false);
 
-
-
   useEffect(() => {
     const token = sessionStorage.getItem("token");
-    if(token == null || token == undefined) {
+    if (token == null || token == undefined) {
       window.location.href = "/";
     }
-  }, [])
+  }, []);
 
   const newProfile = async () => {
-
-    axios.post("http://localhost:3000/profile", {
-      name: name,
-      email: email,
-      phone: phone,
-      insta: insta,
-      youtube: youtube
-    }).then((res) => {
-      console.log(res);
-    }).catch((err) => {
-      console.log(err);
-    }).finally(() => {
-
-      console.log("Profile added");
-    })
-
+    axios
+      .post("http://localhost:3000/profile", {
+        name: name,
+        email: email,
+        phone: phone,
+        insta: insta,
+        youtube: youtube,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("Profile added");
+      });
   };
-  
+
   return (
     <>
       <div class="w-1/6 p-4 fixed top-0 left-0 h-screen bg-white hidden lg:block">
@@ -55,54 +57,147 @@ function Dashboard() {
           <TopBar />
           <div className="mx-12 my-4 grid grid-cols-1 gap-4 px-0 py-0 lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-4">
             <div>
-              <Card />
+              <Card
+                props={{
+                  title: "Total Revenues",
+                  amount: "$ 129,430",
+                  increment: "2.5",
+                }}
+              />
             </div>
             <div>
-              <Card />
+              <Card
+                props={{
+                  title: "Total Transactions",
+                  amount: "1,520",
+                  increment: "1.7",
+                }}
+              />
             </div>
             <div>
-              <Card />
+              <Card
+                props={{
+                  title: "Total Likes",
+                  amount: "9,721",
+                  increment: "1.4",
+                }}
+              />
             </div>
             <div>
-              <Card />
+              <Card
+                props={{
+                  title: "Total Users",
+                  amount: "6,794",
+                  increment: "4.2",
+                }}
+              />
             </div>
           </div>
 
-          <div className="bg-white mx-12 my-4 shadow-2xl rounded-2xl">
-            <BarChart
-              margin={{ top: 20, right: 40, bottom: 30, left: 80 }}
-              xAxis={[
-                {
-                  scaleType: 'band',
-                  data: ['group A', 'group B', 'group C', 'group D'],
-                },
-              ]}
-              series={[
-                { data: [4, 3, 5, 5] },
-                { data: [1, 6, 3, 10] },
-                { data: [1, 6, 3, 10] },
-              ]}
-              height={400}
-            />
-          </div>
-
-          <div className="mx-12 my-4 grid grid-cols-1 xl:grid-cols-2 gap-4 px-0 py-0 mb-20">
-            <div className="flex-row bg-green-50 shadow-xl p-6 w-full rounded-3xl">
-              <Piechart />
-
-              <div className="flex-col  justify-between items-center mt-4">
-                <div>
-                  <h3 className="text-2xl font-semibold">Total Revenue</h3>
-                  <p className="text-xl">$2000000</p>
+          <div className="bg-white mx-12 md:mx-12 my-4 shadow-2xl rounded-2xl">
+            <div className="flex flex-col md:flex-row justify-between p-4 md:p-6 gap-4">
+              <div className="flex flex-col">
+                <span className="text-xl font-semibold">Activities</span>
+                <span className="text-zinc-500">May - June 2021</span>
+              </div>
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4">
+                <div className="flex flex-row items-center mx-3">
+                  <span
+                    className="h-2 w-2 rounded-4xl"
+                    style={{ backgroundColor: "#02B2AF" }}
+                  ></span>
+                  <span className="px-2">Guest</span>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-semibold">+2.5%</h3>
+
+                <div className="flex flex-row items-center mx-3">
+                  <span
+                    className="h-2 w-2 rounded-4xl"
+                    style={{ backgroundColor: "#2E96FF" }}
+                  ></span>
+                  <span className="px-2">User</span>
+                </div>
+
+                <div className="flex flex-row items-center mx-3">
+                  <span
+                    className="h-2 w-2 rounded-4xl"
+                    style={{ backgroundColor: "#B800D8" }}
+                  ></span>
+                  <span className="px-2">Others</span>
                 </div>
               </div>
             </div>
-            <button onClick={() => setItemData(true)} className="flex-col bg-green-50 shadow-xl p-6 w-full rounded-3xl justify-center items-center flex">
+            <div>
+              <BarChart
+                margin={{ top: 20, right: 40, bottom: 30, left: 80 }}
+                xAxis={[
+                  {
+                    scaleType: "band",
+                    data: ["Week 1", "Week 2", "Week 3", "Week 4"],
+                  },
+                ]}
+                series={[
+                  { data: [400, 300, 500, 500] },
+                  { data: [100, 600, 300, 1000] },
+                  { data: [100, 600, 300, 1000] },
+                ]}
+                height={400}
+              />
+            </div>
+          </div>
+
+          <div className="mx-12 my-4 flex flex-col md:flex-row gap-4 px-0 py-0 mb-20">
+          <div className="flex flex-col md:flex-row bg-green-50 shadow-xl p-6 w-full md:w-fit rounded-3xl">
+              <Piechart />
+
+              <div className="flex flex-col justify-around">
+                <div>
+                  <div className="flex flex-row items-center mx-2">
+                    <span
+                      className="h-2 w-2 rounded-4xl"
+                      style={{ backgroundColor: "#02B2AF" }}
+                    ></span>
+                    <span className="text-xl px-4 font-semibold">Basic Tees</span>
+                  </div>
+                  <div className="flex flex-row">
+                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <h3 className="text-1xl text-zinc-500 font-semibold">55%</h3>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-row items-center mx-2">
+                    <span
+                      className="h-2 w-2 rounded-4xl"
+                      style={{ backgroundColor: "#2E96FF" }}
+                    ></span>
+                    <span className="text-xl px-4 font-semibold">Custom Short Pants</span>
+                  </div>
+                  <div className="flex flex-row">
+                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <h3 className="text-1xl text-zinc-500 font-semibold">31%</h3>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-row items-center mx-2">
+                    <span
+                      className="h-2 w-2 rounded-4xl"
+                      style={{ backgroundColor: "#B800D8" }}
+                    ></span>
+                    <span className="text-xl px-4 font-semibold">Super Hoodies</span>
+                  </div>
+                  <div className="flex flex-row">
+                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <h3 className="text-1xl text-zinc-500 font-semibold">14%</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setItemData(true)}
+              className="flex-col bg-green-50 shadow-xl p-6 w-full rounded-3xl justify-center items-center flex"
+            >
               <svg
-                className="border-2 border-green-400 rounded-full p-2"
+                className="border-2 border-zinc-300 bg-zinc-200 rounded-full p-2"
                 width="80"
                 height="80"
                 viewBox="0 0 24 24"
@@ -117,7 +212,7 @@ function Dashboard() {
                   stroke-linejoin="round"
                 />
               </svg>
-              <h3 className="text-2xl font-semibold">Add Profile</h3>
+              <h3 className="text-2xl text-zinc-500 p-5 font-semibold">Add Profile</h3>
             </button>
 
             {itemData && <Popup />}
@@ -126,7 +221,7 @@ function Dashboard() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
