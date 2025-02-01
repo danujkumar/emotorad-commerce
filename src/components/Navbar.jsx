@@ -1,28 +1,14 @@
-import React from "react";
+import React from 'react'
 
 function Navbar() {
   return (
-    <nav class="bg-red-400 fixed top-0 left-0 shadow-lg h-screen w-[300px] py-6 px-6 font-[sans-serif] flex flex-col overflow-auto">
-      <div class="flex flex-wrap items-center cursor-pointer">
-        <div class="relative">
-          <img
-            src="https://readymadeui.com/profile_2.webp"
-            class="w-12 h-12 rounded-full border-white"
-          />
-          <span class="h-3 w-3 rounded-full bg-green-600 border-2 border-white block absolute bottom-0 right-0"></span>
-        </div>
-
-        <div class="ml-4">
-          <p class="text-sm text-[#3949ab] font-semibold">John Doe</p>
-          <p class="text-xs text-gray-500 mt-0.5">D.IN Medicine</p>
-        </div>
-      </div>
-
+    <nav class= "bg-[#4184f5] rounded-2xl shadow-lg h-[96vh] py-6 px-6 font-[sans-serif] flex flex-col overflow-auto">
       <ul class="space-y-8 pl-3 flex-1 mt-10">
-        <li>
+        <h1 class="text-4xl font-semibold text-white">Board.</h1>
+        <li class="mt-18"> 
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +27,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +46,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +73,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +92,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +132,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +156,7 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#3949ab] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +174,7 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

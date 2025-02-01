@@ -22,7 +22,7 @@ export default function Piechart() {
             legend: { hidden: true },
           }}
           onItemClick={(event, d) => setItemData(d)}
-        />{' '}
+        />
       </Box>
     </Stack>
   );

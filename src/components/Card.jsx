@@ -1,15 +1,10 @@
-import React, {useState} from "react";
+import React from 'react'
 
-function Card({name, value}) {
-  console.log(name, value);
-
-  // const [heads, setHeads] = useState(props.props.name);
-  // const [value, setValue] = useState(props.props.value);
+function Card() {
   return (
-    <div class="bg-gray-700 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+    <div class="bg-green-50 shadow-sm p-6 w-full max-w-sm rounded-3xl font-[sans-serif] overflow-hidden mx-auto mt-4">
       <div class="flex items-center">
-        <h3 class="text-2xl font-semibold text-white flex-1">Trends</h3>
-        <div class="bg-gray-900 w-12 h-12 p-1 flex items-center justify-center rounded-full cursor-pointer">
+        <div class="bg-green-400 w-12 h-12 p-1 flex items-center justify-center rounded-full cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32px"
@@ -27,19 +22,16 @@ function Card({name, value}) {
         </div>
       </div>
 
-      <p class="text-sm text-gray-200 my-8 leading-relaxed">
-        {/* {heads} */}
+      <p class="text-sm text-gray-800 font-semibold my-8 leading-relaxed">
+        Total Revenue
       </p>
 
-      <div class="flex items-center">
-        <h3 class="text-lg text-white flex-1">Dark theme</h3>
-        <label class="relative cursor-pointer">
-          <input type="checkbox" class="sr-only peer" checked />
-          <div class="w-11 h-3 flex items-center bg-gray-300 rounded-full peer peer-checked:after:translate-x-full after:absolute after:left-0 peer-checked:after:-left-1 after:bg-gray-300 peer-checked:after:bg-[#007bff] after:border after:border-gray-300 peer-checked:after:border-[#007bff] after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#007bff]"></div>
-        </label>
+      <div class="flex  items-center justify-between  ">
+        <h3 class="text-3xl text-black">$2000000</h3>
+        <h3 class="text-lg p-1 px-3 bg-green-200 rounded-3xl text-green-600">+2.5%</h3>
       </div>
     </div>
-  );
+  )
 }
 
-export default Card;
+export default Card
