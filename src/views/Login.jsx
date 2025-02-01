@@ -1,10 +1,20 @@
 import React from "react";
 import Social from "../components/Social";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 
 function Login() {
   const handleSuccess = (response) => {
     console.log("Login success", response);
+
+    axios.post("http://localhost:3000/oauth", response)
+    .then((res) => {
+      //Access to dashboard is allowed
+
+    }).catch((err) => {
+      console.log(err);
+    }); 
+    
   };
 
   const handleError = () => {

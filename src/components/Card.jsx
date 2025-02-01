@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Card() {
+function Card({name, value}) {
+  console.log(name, value);
+
+  // const [heads, setHeads] = useState(props.props.name);
+  // const [value, setValue] = useState(props.props.value);
   return (
     <div class="bg-gray-700 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
       <div class="flex items-center">
@@ -24,8 +28,7 @@ function Card() {
       </div>
 
       <p class="text-sm text-gray-200 my-8 leading-relaxed">
-        Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet,
-        consectetur Lorem ipsum dolor sit amet, consectetur ipsum.
+        {/* {heads} */}
       </p>
 
       <div class="flex items-center">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../components/Navbar'
 import { BarChart } from '@mui/x-charts/BarChart'
 import Card from '../components/Card'
@@ -6,6 +6,7 @@ import Piechart from '../components/Piechart'
 import TopBar from '../components/TopBar'
 
 function Dashboard() {
+  const [data, setData] = useState({ name: "Total Revenues", value: "$2,129,430" });
   return (
     <>
       <div class="flex flex-row">
@@ -17,16 +18,16 @@ function Dashboard() {
 
           <div className="mx-12 my-4  grid grid-cols-1 xl:grid-cols-4 gap-4 px-0 py-0">
             <div className="bg-red-700">
-              <Card />
+              <Card name={data.name} value={data.value}/>
             </div>
             <div className="bg-red-700">
-              <Card />
+              <Card name="Total Transactions" value="1,520" />
             </div>
             <div className="bg-red-700">
-              <Card />
+              <Card name="Total Likes" value="9,721" />
             </div>
             <div className="bg-red-700">
-              <Card />
+              <Card name="Total Users" value="5,007" />
             </div>
           </div>
 
