@@ -8,17 +8,7 @@ import axios from "axios";
 import Popup from "../components/Popup";
 
 function Dashboard() {
-  const [data, setData] = useState({
-    name: "Total Revenues",
-    value: "$2,129,430",
-  });
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [insta, setInsta] = useState("");
-  const [youtube, setYou] = useState("");
-  const [itemData, setItemData] = React.useState(false);
+  const [itemData, setItemData] = useState(false);
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
@@ -27,25 +17,9 @@ function Dashboard() {
     }
   }, []);
 
-  const newProfile = async () => {
-    axios
-      .post("http://localhost:3000/profile", {
-        name: name,
-        email: email,
-        phone: phone,
-        insta: insta,
-        youtube: youtube,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        console.log("Profile added");
-      });
-  };
+  const handleClose = (state)=>{
+    setItemData(state);
+  }
 
   return (
     <>
@@ -215,7 +189,7 @@ function Dashboard() {
               <h3 className="text-2xl text-zinc-500 p-5 font-semibold">Add Profile</h3>
             </button>
 
-            {itemData && <Popup />}
+            {itemData && <Popup props={handleClose} />}
             {/* <Popup /> */}
           </div>
         </div>
