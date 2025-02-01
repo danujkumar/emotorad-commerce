@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import { BarChart } from '@mui/x-charts/BarChart'
 import Card from '../components/Card'
@@ -7,6 +7,15 @@ import TopBar from '../components/TopBar'
 
 function Dashboard() {
   const [data, setData] = useState({ name: "Total Revenues", value: "$2,129,430" });
+  
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    if(token == null || token == undefined) {
+      window.location.href = "/";
+    }
+  }, [])
+  
   return (
     <>
       <div class="flex flex-row">

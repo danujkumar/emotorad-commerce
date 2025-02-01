@@ -4,13 +4,17 @@ import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 
 function Login() {
+
+  //This function is to get the google authentication
   const handleSuccess = (response) => {
     console.log("Login success", response);
+    sessionStorage.setItem("token", response.accessToken);
+    window.location.href = "/dashboard";
 
     axios.post("http://localhost:3000/oauth", response)
     .then((res) => {
       //Access to dashboard is allowed
-
+      window.location.href = "/dashboard";
     }).catch((err) => {
       console.log(err);
     }); 
