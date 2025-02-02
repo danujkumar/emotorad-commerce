@@ -7,13 +7,12 @@ import TopBar from "../components/TopBar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
-import User from "../assets/User";
-import Transactions from "../assets/Transactions";
-import Likes from "../assets/Likes";
-import Revenue from "../assets/Revenue";
 
 function Dashboard() {
   const [itemData, setItemData] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,18 +22,35 @@ function Dashboard() {
     }
   }, []);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      if(window.innerWidth <= 768){
+        setIsMobile(true);
+      }else{
+        setIsMobile(false); 
+      }
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
   const handleClose = (state)=>{
     setItemData(state);
   }
 
   return (
     <>
-      <div className="w-1/6 p-4 fixed top-0 left-0 h-screen bg-white hidden lg:block">
+      {(!isMobile || isNavVisible)&&<div className="w-[290px] p-4 fixed top-0 left-0 h-screen bg-white block z-10 transition-all duration-300">
         <Navbar />
-      </div>
+        
+
+      </div>}
       <div className="lg:w-5/6 fixed right-0 top-0 h-screen flex flex-col overflow-y-auto">
         <div className="w-full ">
-          <TopBar />
+          <TopBar isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} isMobile={isMobile} />
           <div className="mx-12 my-4 grid grid-cols-1 gap-4 px-0 py-0 lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-4">
             <div>
               <Card
@@ -42,7 +58,6 @@ function Dashboard() {
                   title: "Total Revenues",
                   amount: "$ 129,430",
                   increment: "2.5",
-                  icon: User
                 }}
               />
             </div>
@@ -52,7 +67,6 @@ function Dashboard() {
                   title: "Total Transactions",
                   amount: "1,520",
                   increment: "1.7",
-                  icon: Likes
                 }}
               />
             </div>
@@ -62,7 +76,6 @@ function Dashboard() {
                   title: "Total Likes",
                   amount: "9,721",
                   increment: "1.4",
-                  icon: Transactions
                 }}
               />
             </div>
@@ -72,7 +85,6 @@ function Dashboard() {
                   title: "Total Users",
                   amount: "6,794",
                   increment: "4.2",
-                  icon: Revenue
                 }}
               />
             </div>
