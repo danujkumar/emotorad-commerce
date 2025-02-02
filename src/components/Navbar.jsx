@@ -40,7 +40,7 @@ function Navbar() {
                 data-original="#000000"
               />
             </svg>
-            <span>Insight</span>
+            <span>Transactions</span>
           </a>
         </li>
         <li>
@@ -67,7 +67,7 @@ function Navbar() {
                 data-original="#000000"
               />
             </svg>
-            <span>People & Terms</span>
+            <span>Schedules</span>
           </a>
         </li>
         <li>
@@ -86,7 +86,7 @@ function Navbar() {
                 data-original="#000000"
               />
             </svg>
-            <span>Product</span>
+            <span>Users</span>
           </a>
         </li>
         <li>
@@ -123,7 +123,7 @@ function Navbar() {
                 />
               </g>
             </svg>
-            <span>Inbox</span>
+            <span>Settings</span>
           </a>
         </li>
       </ul>

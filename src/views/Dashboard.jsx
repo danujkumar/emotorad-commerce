@@ -7,6 +7,10 @@ import TopBar from "../components/TopBar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
+import User from "../assets/User";
+import Transactions from "../assets/Transactions";
+import Likes from "../assets/Likes";
+import Revenue from "../assets/Revenue";
 
 function Dashboard() {
   const [itemData, setItemData] = useState(false);
@@ -38,6 +42,7 @@ function Dashboard() {
                   title: "Total Revenues",
                   amount: "$ 129,430",
                   increment: "2.5",
+                  icon: User
                 }}
               />
             </div>
@@ -47,6 +52,7 @@ function Dashboard() {
                   title: "Total Transactions",
                   amount: "1,520",
                   increment: "1.7",
+                  icon: Likes
                 }}
               />
             </div>
@@ -56,6 +62,7 @@ function Dashboard() {
                   title: "Total Likes",
                   amount: "9,721",
                   increment: "1.4",
+                  icon: Transactions
                 }}
               />
             </div>
@@ -65,6 +72,7 @@ function Dashboard() {
                   title: "Total Users",
                   amount: "6,794",
                   increment: "4.2",
+                  icon: Revenue
                 }}
               />
             </div>
