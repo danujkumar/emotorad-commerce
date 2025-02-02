@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function TopBar() {
+function TopBar(props) {
+  useEffect(() => {
+    console.log(props.isNavVisible)
+  }, [props.isNavVisible])
   return (
     <header className="flex py-3 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50 ">
       <div className="flex flex-wrap px-8 items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full">
@@ -9,10 +12,9 @@ function TopBar() {
         </a>
         <div
           id="collapseMenu"
-          className="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+          className="max-lg:hidden max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
         >
           <button
-            id="toggleClose"
             className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
           >
             <svg
@@ -75,20 +77,27 @@ function TopBar() {
             </li>
           </ul>
 
-          <button id="toggleOpen" className="lg:hidden ml-7">
+          {props.isMobile && <button className="ml-7 flex justify-center items-center" onClick={() => {
+            props.setIsNavVisible(!props.isNavVisible);
+            }}>/
+            {!props.isNavVisible?
             <svg
-              className="w-7 h-7"
-              fill="#000"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </button>
+            className="w-7 h-7"
+            fill="#000"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            ></path>
+          </svg> : 
+            <p className='font-medium text-4xl'>x</p>
+          }
+            
+          
+          </button>}
         </div>
       </div>
     </header>
