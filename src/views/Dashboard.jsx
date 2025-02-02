@@ -5,15 +5,17 @@ import Card from "../components/Card";
 import Piechart from "../components/Piechart";
 import TopBar from "../components/TopBar";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
 
 function Dashboard() {
   const [itemData, setItemData] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
     if (token == null || token == undefined) {
-      window.location.href = "/";
+      navigate("/");
     }
   }, []);
 
@@ -23,11 +25,11 @@ function Dashboard() {
 
   return (
     <>
-      <div class="w-1/6 p-4 fixed top-0 left-0 h-screen bg-white hidden lg:block">
+      <div className="w-1/6 p-4 fixed top-0 left-0 h-screen bg-white hidden lg:block">
         <Navbar />
       </div>
-      <div class="lg:w-5/6 fixed right-0 top-0 h-screen flex flex-col overflow-y-auto">
-        <div class="w-full ">
+      <div className="lg:w-5/6 fixed right-0 top-0 h-screen flex flex-col overflow-y-auto">
+        <div className="w-full ">
           <TopBar />
           <div className="mx-12 my-4 grid grid-cols-1 gap-4 px-0 py-0 lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-4">
             <div>
@@ -120,7 +122,7 @@ function Dashboard() {
           </div>
 
           <div className="mx-12 my-4 flex flex-col md:flex-row gap-4 px-0 py-0 mb-20">
-          <div className="flex flex-col md:flex-row bg-green-50 shadow-xl p-6 w-full md:w-fit rounded-3xl">
+          <div className="flex flex-col items-center md:flex-row bg-green-50 shadow-xl p-6 w-full md:w-auto rounded-3xl">
               <Piechart />
 
               <div className="flex flex-col justify-around">
@@ -133,7 +135,7 @@ function Dashboard() {
                     <span className="text-xl px-4 font-semibold">Basic Tees</span>
                   </div>
                   <div className="flex flex-row">
-                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <div className="bg-red w-8 rounded-4xl"></div>
                     <h3 className="text-1xl text-zinc-500 font-semibold">55%</h3>
                   </div>
                 </div>
@@ -146,7 +148,7 @@ function Dashboard() {
                     <span className="text-xl px-4 font-semibold">Custom Short Pants</span>
                   </div>
                   <div className="flex flex-row">
-                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <div className="bg-red w-8 rounded-4xl"></div>
                     <h3 className="text-1xl text-zinc-500 font-semibold">31%</h3>
                   </div>
                 </div>
@@ -159,7 +161,7 @@ function Dashboard() {
                     <span className="text-xl px-4 font-semibold">Super Hoodies</span>
                   </div>
                   <div className="flex flex-row">
-                    <div class="bg-red w-8 rounded-4xl"></div>
+                    <div className="bg-red w-8 rounded-4xl"></div>
                     <h3 className="text-1xl text-zinc-500 font-semibold">14%</h3>
                   </div>
                 </div>
@@ -181,9 +183,9 @@ function Dashboard() {
                 <path
                   d="M12 5V19M5 12H19"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               <h3 className="text-2xl text-zinc-500 p-5 font-semibold">Add Profile</h3>

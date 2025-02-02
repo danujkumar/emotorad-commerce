@@ -2,18 +2,18 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <nav class= "bg-[#4184f5] rounded-2xl shadow-lg h-[96vh] py-6 px-6 font-[sans-serif] flex flex-col overflow-auto">
-      <ul class="space-y-8 pl-3 flex-1 mt-10">
-        <h1 class="text-4xl font-semibold text-white">Board.</h1>
-        <li class="mt-18"> 
+    <nav className= "bg-[#4184f5] rounded-2xl shadow-lg h-[96vh] py-6 px-6 font-[sans-serif] flex flex-col overflow-auto">
+      <ul className="space-y-8 pl-3 flex-1 mt-10">
+        <h1 className="text-4xl font-semibold text-white">Board.</h1>
+        <li className="mt-18"> 
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 512 512"
             >
               <path
@@ -27,12 +27,12 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 16 16"
             >
               <path
@@ -46,12 +46,12 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 512 512"
             >
               <path
@@ -73,12 +73,12 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 511.414 511.414"
             >
               <path
@@ -92,13 +92,13 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               stroke="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 682.667 682.667"
             >
               <defs>
@@ -107,13 +107,13 @@ function Navbar() {
                 </clipPath>
               </defs>
               <g
-                clip-path="url(#a)"
+                clipPath="url(#a)"
                 transform="matrix(1.33 0 0 -1.33 0 682.667)"
               >
                 <path
                   fill="none"
-                  stroke-miterlimit="10"
-                  stroke-width="40"
+                  strokeMiterlimit="10"
+                  strokeWidth="40"
                   d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
                   data-original="#000000"
                 />
@@ -128,16 +128,16 @@ function Navbar() {
         </li>
       </ul>
 
-      <ul class="space-y-8 pl-3 mt-8">
+      <ul className="space-y-8 pl-3 mt-8">
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 512 512"
             >
               <circle cx="256" cy="378.5" r="25" data-original="#000000" />
@@ -156,12 +156,12 @@ function Navbar() {
         <li>
           <a
             href="javascript:void(0)"
-            class="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
+            className="text-[#ffffff] font-semibold text-sm flex items-center rounded-md left-0 hover:left-1 relative transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-[18px] h-[18px] mr-4"
+              className="w-[18px] h-[18px] mr-4"
               viewBox="0 0 6.35 6.35"
             >
               <path

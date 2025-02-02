@@ -2,10 +2,10 @@ import React from "react";
 
 function Social() {
   return (
-    <div class="space-x-6 space-y-8 text-center m-0 bg-transparent">
+    <div className="space-x-6 space-y-8 text-center m-0 bg-transparent">
       <button
         type="button"
-        class="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-blue-600"
+        className="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-blue-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ function Social() {
 
       <button
         type="button"
-        class="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#03a9f4]"
+        className="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#03a9f4]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ function Social() {
 
       <button
         type="button"
-        class="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#0077b5]"
+        className="w-10 h-10 inline-flex cursor-pointer items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#0077b5]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ function Social() {
 
       <button
         type="button"
-        class="w-10 h-10 inline-flex items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent cursor-pointer active:bg-[#ea0065]"
+        className="w-10 h-10 inline-flex items-center justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent cursor-pointer active:bg-[#ea0065]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ function Social() {
 
       <button
         type="button"
-        class="w-10 h-10 inline-flex items-center cursor-pointer justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#f61c0d]"
+        className="w-10 h-10 inline-flex items-center cursor-pointer justify-center rounded-full border-1 border-amber-50 outline-none bg-transparent active:bg-[#f61c0d]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -30,16 +30,16 @@ function Popup({ props }) {
   const [youtube, setYou] = useState("");
 
   return (
-    <div class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
-      <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8 relative">
-        <div class="flex items-center">
-          <h3 class="text-blue-600 text-xl font-bold flex-1">
+    <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+      <div className="w-full max-w-lg bg-white shadow-lg rounded-lg p-8 relative">
+        <div className="flex items-center">
+          <h3 className="text-blue-600 text-xl font-bold flex-1">
             Add New Profile
           </h3>
           <button onClick={() => props(false)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-3 ml-2 cursor-pointer shrink-0 fill-gray-400 hover:fill-red-500"
+              className="w-3 ml-2 cursor-pointer shrink-0 fill-gray-400 hover:fill-red-500"
               viewBox="0 0 320.591 320.591"
             >
               <path
@@ -54,73 +54,73 @@ function Popup({ props }) {
           </button>
         </div>
 
-        <form class="space-y-4 mt-8">
+        <form className="space-y-4 mt-8">
           <div>
-            <labe class="text-gray-800 text-sm mb-2 block">Enter Name *</labe>
+            <labe className="text-gray-800 text-sm mb-2 block">Enter Name *</labe>
             <input
               onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Eg. Anuj Singh"
-              class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
+              className="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
             />
           </div>
 
           <div>
-            <label class="text-gray-800 text-sm mb-2 block">
+            <label className="text-gray-800 text-sm mb-2 block">
               Enter Email *
             </label>
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="text"
               placeholder="Eg. anuj.as@gmail.com"
-              class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
+              className="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
             />
           </div>
 
           <div>
-            <label class="text-gray-800 text-sm mb-2 block">
+            <label className="text-gray-800 text-sm mb-2 block">
               Enter Phone *
             </label>
             <input
               onChange={(e) => setPhone(e.target.value)}
               type="number"
               placeholder="Eg. 9876543210"
-              class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
+              className="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
             />
           </div>
 
           <div>
-            <labe class="text-gray-800 text-sm mb-2 block">Instagram Link</labe>
+            <labe className="text-gray-800 text-sm mb-2 block">Instagram Link</labe>
             <input
               onChange={(e) => setInsta(e.target.value)}
               type="text"
               placeholder="Eg. https://www.instagram.com/anuj.as"
-              class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
+              className="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
             />
           </div>
 
           <div>
-            <labe class="text-gray-800 text-sm mb-2 block">Youtube Link</labe>
+            <labe className="text-gray-800 text-sm mb-2 block">Youtube Link</labe>
             <input
               onChange={(e) => setYou(e.target.value)}
               type="text"
               placeholder="Ex. https://www.youtube.com/anuj.as"
-              class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
+              className="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg"
             />
           </div>
 
-          <div class="flex justify-end gap-4 !mt-8">
+          <div className="flex justify-end gap-4 !mt-8">
             <button
               type="button"
               onClick={() => props(false)}
-              class="px-6 py-3 rounded-lg text-gray-800 text-sm border-none outline-none tracking-wide bg-gray-200 hover:bg-gray-300"
+              className="px-6 py-3 rounded-lg text-gray-800 text-sm border-none outline-none tracking-wide bg-gray-200 hover:bg-gray-300"
             >
               Back
             </button>
             <button
               onClick={() => {newProfile(name, email, phone, insta, youtube); props(false)}}
               type="button"
-              class="px-6 py-3 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700"
+              className="px-6 py-3 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700"
             >
               Done
             </button>

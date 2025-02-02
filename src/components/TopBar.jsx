@@ -2,22 +2,22 @@ import React from 'react'
 
 function TopBar() {
   return (
-    <header class="flex py-3 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50 ">
-      <div class="flex flex-wrap px-8 items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full">
+    <header className="flex py-3 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50 ">
+      <div className="flex flex-wrap px-8 items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full">
         <a href="javascript:void(0)">
-          <h1 class="text-[20px] font-semibold text-black">Dashboard</h1>
+          <h1 className="text-[20px] font-semibold text-black">Dashboard</h1>
         </a>
         <div
           id="collapseMenu"
-          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+          className="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
         >
           <button
             id="toggleClose"
-            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+            className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-3.5 h-3.5 fill-black"
+              className="w-3.5 h-3.5 fill-black"
               viewBox="0 0 320.591 320.591"
             >
               <path
@@ -31,40 +31,40 @@ function TopBar() {
             </svg>
           </button>
 
-          <ul class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-            <li class="mb-6 hidden max-lg:block">
+          <ul className="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+            <li className="mb-6 hidden max-lg:block">
               <a href="javascript:void(0)">
                 <img
                   src="https://readymadeui.com/readymadeui.svg"
                   alt="logo"
-                  class="w-36"
+                  className="w-36"
                 />
               </a>
             </li>
 
-            <li class="max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-7 lg:after:transition-all lg:after:duration-300">
-              <a href="javascript:void(0)" class="text-black block text-[15px]">
+            <li className="max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-7 lg:after:transition-all lg:after:duration-300">
+              <a href="javascript:void(0)" className="text-black block text-[15px]">
                 Places
               </a>
             </li>
-            <li class="max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-7 lg:after:transition-all lg:after:duration-300">
-              <a href="javascript:void(0)" class="text-black block text-[15px]">
+            <li className="max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-7 lg:after:transition-all lg:after:duration-300">
+              <a href="javascript:void(0)" className="text-black block text-[15px]">
                 Contact
               </a>
             </li>
           </ul>
         </div>
-        <div class="flex items-center max-sm:ml-auto space-x-6">
+        <div className="flex items-center max-sm:ml-auto space-x-6">
           <ul>
             <li
               id="profile-dropdown-toggle"
-              class="relative px-1 after:absolute after:bg-black after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300"
+              className="relative px-1 after:absolute after:bg-black after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24px"
                 height="24px"
-                class="cursor-pointer hover:fill-black"
+                className="cursor-pointer hover:fill-black"
                 viewBox="0 0 512 512"
               >
                 <path
@@ -75,17 +75,17 @@ function TopBar() {
             </li>
           </ul>
 
-          <button id="toggleOpen" class="lg:hidden ml-7">
+          <button id="toggleOpen" className="lg:hidden ml-7">
             <svg
-              class="w-7 h-7"
+              className="w-7 h-7"
               fill="#000"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>

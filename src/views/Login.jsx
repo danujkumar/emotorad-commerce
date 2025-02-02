@@ -2,19 +2,22 @@ import React from "react";
 import Social from "../components/Social";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+
+  const navigate = useNavigate();
 
   //This function is to get the google authentication
   const handleSuccess = (response) => {
     console.log("Login success", response);
     sessionStorage.setItem("token", response.accessToken);
-    window.location.href = "/dashboard";
+    navigate("/dashboard");
 
     axios.post("http://localhost:3000/oauth", response)
     .then((res) => {
       //Access to dashboard is allowed
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
     }).catch((err) => {
       console.log(err);
     }); 
@@ -26,9 +29,9 @@ function Login() {
   };
 
   return (
-    <div class="font-[sans-serif]">
-      <div class=" grid lg:grid-cols-2 md:grid-cols-2 items-center gap-4">
-        <div class="max-md:order-1 h-screen min-h-full max-w-screen flex flex-col">
+    <div className="font-[sans-serif]">
+      <div className=" grid lg:grid-cols-2 md:grid-cols-2 items-center gap-4">
+        <div className="max-md:order-1 h-screen min-h-full max-w-screen flex flex-col">
           <div
             style={{
               backgroundPosition: "-4px center",
@@ -36,21 +39,21 @@ function Login() {
               backgroundImage:
                 "url(https://media.graphassets.com/MdzMetSQZ66hoOJifaPF)",
             }}
-            class="flex-1 flex flex-col"
+            className="flex-1 flex flex-col"
           >
-            <div class="mt-auto">
+            <div className="mt-auto">
               <Social />
             </div>
           </div>
         </div>
 
-        <div class=" justify-center items-center max-md:order-1 h-screen min-h-full max-w-screen flex flex-col">
-          <div class="bg-white rounded-xl sm:px-6 px-4 py-8 max-w-md w-full h-max shadow-[2px_2px_10px_-3px_rgba(6,81,237,0.3)] max-lg:mx-auto">
+        <div className=" justify-center items-center max-md:order-1 h-screen min-h-full max-w-screen flex flex-col">
+          <div className="bg-white rounded-xl sm:px-6 px-4 py-8 max-w-md w-full h-max shadow-[2px_2px_10px_-3px_rgba(6,81,237,0.3)] max-lg:mx-auto">
             <form>
-              <div class="mb-8">
-                <h3 class="text-3xl font-extrabold text-gray-800">Sign in</h3>
+              <div className="mb-8">
+                <h3 className="text-3xl font-extrabold text-gray-800">Sign in</h3>
               </div>
-              <div class="sm:flex sm:items-start space-x-4 max-sm:space-y-4 mb-8">
+              <div className="sm:flex sm:items-start space-x-4 max-sm:space-y-4 mb-8">
                 <GoogleOAuthProvider clientId="320132097260-tpf6vvtdkej99k3a614pe0tu1cdt1ijr.apps.googleusercontent.com">
                   <GoogleLogin
                     onSuccess={handleSuccess}
@@ -59,7 +62,7 @@ function Login() {
                 </GoogleOAuthProvider>
                 <button
                   type="button"
-                  class="py-2.5 px-4 text-sm font-semibold rounded-md text-blue-500 bg-blue-100 hover:bg-blue-200 focus:outline-none"
+                  className="py-2.5 px-4 text-sm font-semibold rounded-md text-blue-500 bg-blue-100 hover:bg-blue-200 focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +78,7 @@ function Login() {
                 </button>
                 <button
                   type="button"
-                  class="py-2.5 px-4 text-sm font-semibold rounded-md text-blue-500 bg-blue-100 hover:bg-blue-200 focus:outline-none"
+                  className="py-2.5 px-4 text-sm font-semibold rounded-md text-blue-500 bg-blue-100 hover:bg-blue-200 focus:outline-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,22 +95,22 @@ function Login() {
               </div>
 
               <div>
-                <label class="text-gray-800 text-sm mb-2 block">
+                <label className="text-gray-800 text-sm mb-2 block">
                   Email Address
                 </label>
-                <div class="relative flex items-center">
+                <div className="relative flex items-center">
                   <input
                     name="username"
                     type="text"
                     required
-                    class="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
+                    className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
                     placeholder="Enter user name"
                   />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#bbb"
                     stroke="#bbb"
-                    class="w-[18px] h-[18px] absolute right-4"
+                    className="w-[18px] h-[18px] absolute right-4"
                     viewBox="0 0 24 24"
                   >
                     <circle
@@ -123,21 +126,21 @@ function Login() {
                   </svg>
                 </div>
               </div>
-              <div class="mt-4">
-                <label class="text-gray-800 text-sm mb-2 block">Password</label>
-                <div class="relative flex items-center">
+              <div className="mt-4">
+                <label className="text-gray-800 text-sm mb-2 block">Password</label>
+                <div className="relative flex items-center">
                   <input
                     name="password"
                     type="password"
                     required
-                    class="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
+                    className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
                     placeholder="Enter password"
                   />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#bbb"
                     stroke="#bbb"
-                    class="w-[18px] h-[18px] absolute right-4 cursor-pointer"
+                    className="w-[18px] h-[18px] absolute right-4 cursor-pointer"
                     viewBox="0 0 128 128"
                   >
                     <path
@@ -147,28 +150,28 @@ function Login() {
                   </svg>
                 </div>
               </div>
-              <div class="mt-4 text-right">
+              <div className="mt-4 text-right">
                 <a
                   href="jajvascript:void(0);"
-                  class="text-blue-600 text-sm font-semibold hover:underline"
+                  className="text-blue-600 text-sm font-semibold hover:underline"
                 >
                   Forgot your password?
                 </a>
               </div>
 
-              <div class="mt-8">
+              <div className="mt-8">
                 <button
                   type="button"
-                  class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                  className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
                 >
                   Log in
                 </button>
               </div>
-              <p class="text-sm mt-6 text-center text-gray-800">
+              <p className="text-sm mt-6 text-center text-gray-800">
                 Don't have an account{" "}
                 <a
                   href="javascript:void(0);"
-                  class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap"
+                  className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap"
                 >
                   Register here
                 </a>

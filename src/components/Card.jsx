@@ -13,15 +13,15 @@ function Card({props}) {
   }, [])
   
   return (
-    <div class="bg-green-50 shadow-sm py-3 px-4 w-full max-w-sm rounded-3xl font-[sans-serif] overflow-hidden mx-auto mt-4">
-      <div class="flex items-center">
-        <div class="bg-green-400 w-12 h-12 p-1 flex items-center justify-center rounded-full">
+    <div className="bg-green-50 shadow-sm py-3 px-4 w-full max-w-sm rounded-3xl font-[sans-serif] overflow-hidden mx-auto mt-4">
+      <div className="flex items-center">
+        <div className="bg-green-400 w-12 h-12 p-1 flex items-center justify-center rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32px"
             viewBox="0 0 24 24"
           >
-            <g class="fill-yellow-400">
+            <g className="fill-yellow-400">
               <circle cx="12" cy="12" r="5" />
               <path
                 fill="#f2b108"
@@ -33,13 +33,13 @@ function Card({props}) {
         </div>
       </div>
 
-      <p class="text-sm text-gray-800 font-semibold my-1 py-2 leading-relaxed">
+      <p className="text-sm text-gray-800 font-semibold my-1 py-2 leading-relaxed">
         {metric}
       </p>
 
-      <div class="flex  items-center justify-between  ">
-        <h3 class="text-2xl text-black">{value}</h3>
-        <h3 class="text-xs p-1 px-3 bg-green-200 rounded-3xl text-green-600">+ {increment}%</h3>
+      <div className="flex  items-center justify-between  ">
+        <h3 className="text-2xl text-black">{value}</h3>
+        <h3 className="text-xs p-1 px-3 bg-green-200 rounded-3xl text-green-600">+ {increment}%</h3>
       </div>
     </div>
   )
